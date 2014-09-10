@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports=[{
   "name": "Numero Uno",
-  "duration": "60s",
+  "duration": "40s",
   "timingFunction": "ease",
   "colors": ["#2BC0E4", "#EAECC6", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA"],
   "text": "COLOR"
@@ -13,7 +13,7 @@ module.exports=[{
   "text": "OMGLIKEWTFBBQ"
 }, {
   "name": "Jungle",
-  "duration": "60s",
+  "duration": "35s",
   "timingFunction": "ease",
   "colors": ["#E7E9BB", "#D3959B", "#D3959B", "#D3959B", "#BFE6BA"],
   "text": ""
@@ -9220,7 +9220,6 @@ var $canvas = $('.canvas');
 var $main = $('.main-container');
 
 var currIndex = utils.getRandomIndex(animations);
-//var maxEmptySpans = 12;
 
 //all animation switches happen based on hash in the url
 //this big boy handles it all
@@ -9263,22 +9262,23 @@ function setAnimationText() {
   $('.text').text(animations[currIndex].text);
 }
 
-function setInfo(){
+function setInfo() {
   var curr = animations[currIndex];
   var animName = curr.name;
   var colors = curr.colors;
   var spansCollection = $('.hexcode');
 
   $('.info .animation-name').text(animName);
-  spansCollection.each(function(){
+  spansCollection.each(function() {
     $(this).attr('hidden', 'hidden');
   });
-  colors.forEach(function(v, i){
+  colors.forEach(function(v, i) {
     var $span = $(spansCollection[i]);
     $span.text(v);
     $span.removeAttr('hidden');
   });
 }
+
 },{"../data/animations.json":1,"./utils":4,"jquery":2}],4:[function(require,module,exports){
 /*function setCSS(node, property, value) {
   $(node).css(property, value);
