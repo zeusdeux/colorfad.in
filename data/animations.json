@@ -1,6 +1,6 @@
 [{
   "name": "Numero Uno",
-  "duration": "60s",
+  "duration": "40s",
   "timingFunction": "ease",
   "colors": ["#2BC0E4", "#EAECC6", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA"],
   "text": "COLOR"
@@ -12,7 +12,7 @@
   "text": "OMGLIKEWTFBBQ"
 }, {
   "name": "Jungle",
-  "duration": "60s",
+  "duration": "35s",
   "timingFunction": "ease",
   "colors": ["#E7E9BB", "#D3959B", "#D3959B", "#D3959B", "#BFE6BA"],
   "text": ""
