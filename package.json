@@ -2,7 +2,7 @@
   "name": "colorfa.de",
   "version": "1.0.0",
   "private": true,
-  "description": "Colors fading goodness",
+  "description": "Color fading goodness",
   "main": "src/index.js",
   "keywords": [
     "color",
