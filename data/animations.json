@@ -1,0 +1,19 @@
+[{
+  "name": "Numero Uno",
+  "duration": "60s",
+  "timingFunction": "ease",
+  "colors": ["#2BC0E4", "#EAECC6", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA"],
+  "text": "COLOR"
+}, {
+  "name": "Winter Solstice",
+  "duration": "60s",
+  "timingFunction": "ease",
+  "colors": ["#D3959B", "#BFE6BA", "#403B4A", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA", "#E7E9BB", "#D3959B", "#BFE6BA"],
+  "text": "OMGLIKEWTFBBQ"
+}, {
+  "name": "Jungle",
+  "duration": "60s",
+  "timingFunction": "ease",
+  "colors": ["#E7E9BB", "#D3959B", "#D3959B", "#D3959B", "#BFE6BA"],
+  "text": ""
+}]

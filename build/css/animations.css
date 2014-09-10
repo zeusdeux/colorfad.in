@@ -1,0 +1,141 @@
+@-webkit-keyframes NumeroUno {
+  0% {
+    background: #2BC0E4;
+  }
+  20% {
+    background: #EAECC6;
+  }
+  40% {
+    background: #403B4A;
+  }
+  60% {
+    background: #E7E9BB;
+  }
+  80% {
+    background: #D3959B;
+  }
+  100% {
+    background: #BFE6BA;
+  }
+}
+
+@keyframes NumeroUno {
+  0% {
+    background: #2BC0E4;
+  }
+  20% {
+    background: #EAECC6;
+  }
+  40% {
+    background: #403B4A;
+  }
+  60% {
+    background: #E7E9BB;
+  }
+  80% {
+    background: #D3959B;
+  }
+  100% {
+    background: #BFE6BA;
+  }
+}
+@-webkit-keyframes WinterSolstice {
+  0% {
+    background: #D3959B;
+  }
+  11% {
+    background: #BFE6BA;
+  }
+  22% {
+    background: #403B4A;
+  }
+  33% {
+    background: #403B4A;
+  }
+  44% {
+    background: #E7E9BB;
+  }
+  55% {
+    background: #D3959B;
+  }
+  66% {
+    background: #BFE6BA;
+  }
+  77% {
+    background: #E7E9BB;
+  }
+  88% {
+    background: #D3959B;
+  }
+  100% {
+    background: #BFE6BA;
+  }
+}
+
+@keyframes WinterSolstice {
+  0% {
+    background: #D3959B;
+  }
+  11% {
+    background: #BFE6BA;
+  }
+  22% {
+    background: #403B4A;
+  }
+  33% {
+    background: #403B4A;
+  }
+  44% {
+    background: #E7E9BB;
+  }
+  55% {
+    background: #D3959B;
+  }
+  66% {
+    background: #BFE6BA;
+  }
+  77% {
+    background: #E7E9BB;
+  }
+  88% {
+    background: #D3959B;
+  }
+  100% {
+    background: #BFE6BA;
+  }
+}
+@-webkit-keyframes Jungle {
+  0% {
+    background: #E7E9BB;
+  }
+  25% {
+    background: #D3959B;
+  }
+  50% {
+    background: #D3959B;
+  }
+  75% {
+    background: #D3959B;
+  }
+  100% {
+    background: #BFE6BA;
+  }
+}
+
+@keyframes Jungle {
+  0% {
+    background: #E7E9BB;
+  }
+  25% {
+    background: #D3959B;
+  }
+  50% {
+    background: #D3959B;
+  }
+  75% {
+    background: #D3959B;
+  }
+  100% {
+    background: #BFE6BA;
+  }
+}

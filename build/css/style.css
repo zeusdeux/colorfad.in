@@ -1,0 +1,132 @@
+html, body, .main-container, .canvas {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+body {
+  color: #fff;
+}
+.monospace {
+  font-family: monospace;
+}
+.main-container {
+  position: relative;
+  z-index: 0;
+}
+.canvas {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+  transition: animation 2s ease-in, -webkit-animation 2s ease-in;
+  -webkit-transition: animation 2s ease-in, -webkit-animation 2s ease-in;
+}
+.text-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.text {
+  letter-spacing: 0.7em;
+}
+.info {
+  top: 40px;
+  left: 20px;
+  opacity: 0;
+  z-index: 1;
+  width: 134px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.75);
+  transition: opacity 200ms ease-in;
+  -webkit-transition: opacity 200ms ease-in;
+}
+.info span {
+  padding-right: 10px;
+  line-height: 2em;
+}
+body:hover .info {
+  opacity: 1;
+}
+.hexcode {
+  font-family: monospace;
+}
+.arrow-left .arrow, .arrow-right .arrow {
+  padding: 20px 10px;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.43);
+  -webkit-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+  width: 60px;
+  cursor: pointer;
+}
+body:hover .arrow-left .arrow, body:hover .arrow-right .arrow {
+  opacity: 0.5;
+}
+.arrow-left p.arrow:hover, .arrow-right p.arrow:hover {
+  opacity: 0.95;
+}
+.arrow-right {
+  position: relative;
+  right: 0;
+}
+.arrow-right .arrow {
+  float: right;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.arrow-left .arrow {
+  text-align: center;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.logo, .social {
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.75);
+  transition: opacity 200ms ease-in;
+  -webkit-transition: opacity 200ms ease-in;
+}
+.logo {
+  left: 20px;
+  bottom: 10px;
+}
+.social {
+  right: 20px;
+  bottom: 5px;
+}
+body:hover .logo, body:hover .social {
+  opacity: 1;
+}
+.logo p > a, .social p > a {
+  color: rgba(255, 255, 255, 0.75);
+}
+.social p {
+  display: inline-block;
+}
+.social p > a {
+  font-size: 2em;
+  margin-right: 10px;
+}
+.hcenter {
+  text-align: center;
+}
+.vcenter-parent {
+  display: table;
+}
+.vcenter {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  .info {
+    top: 10px;
+  }
+  .social {
+    bottom: 0;
+  }
+}
