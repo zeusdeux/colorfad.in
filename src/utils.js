@@ -5,7 +5,9 @@
 
 function getAnimationValue(array, index) {
   var curr = array[index];
-  return getCanonicalName(curr.name) + ' ' + curr.duration.match(/\d+ms{1}|\d+s{1}/g) + ' ' + curr.timingFunction + ' 0s infinite alternate';
+  var duration = curr.duration.match(/\d+ms{1}|\d+s{1}/g);
+  var defaultDuration = '10s';
+  return getCanonicalName(curr.name) + ' ' + (duration.length ? duration[0] : defaultDuration) + ' ' + curr.timingFunction + ' 0s infinite alternate';
 }
 
 function getRandomIndex(array) {
