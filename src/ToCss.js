@@ -23,6 +23,8 @@ ToCss.prototype._transform = function(chunk, enc, cb) {
       var diff = ~~ (100 / (data.colors.length - 1));
       var init = 0;
       var rules;
+
+      console.log('@'+v+'keyframes'+' '+data.name.replace(/[\W]/g, ''));
       // if there's only one color, push the same on again
       // so that we have it twice in the array (for 0% and 100%)
       if (data.colors.length === 1) data.colors.push(data.colors[0]);

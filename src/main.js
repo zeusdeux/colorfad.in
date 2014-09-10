@@ -6,7 +6,6 @@ var $canvas = $('.canvas');
 var $main = $('.main-container');
 
 var currIndex = utils.getRandomIndex(animations);
-//var maxEmptySpans = 12;
 
 //all animation switches happen based on hash in the url
 //this big boy handles it all
@@ -49,17 +48,17 @@ function setAnimationText() {
   $('.text').text(animations[currIndex].text);
 }
 
-function setInfo(){
+function setInfo() {
   var curr = animations[currIndex];
   var animName = curr.name;
   var colors = curr.colors;
   var spansCollection = $('.hexcode');
 
   $('.info .animation-name').text(animName);
-  spansCollection.each(function(){
+  spansCollection.each(function() {
     $(this).attr('hidden', 'hidden');
   });
-  colors.forEach(function(v, i){
+  colors.forEach(function(v, i) {
     var $span = $(spansCollection[i]);
     $span.text(v);
     $span.removeAttr('hidden');
