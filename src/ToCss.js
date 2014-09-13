@@ -1,4 +1,5 @@
-var util      = require('util');
+var util = require('util');
+var moreUtils = require('./utils');
 var Transform = require('stream').Transform;
 
 util.inherits(ToCss, Transform);
@@ -24,7 +25,7 @@ ToCss.prototype._transform = function(chunk, enc, cb) {
       var init = 0;
       var rules;
 
-      console.log('@'+v+'keyframes'+' '+data.name.replace(/[\W]/g, ''));
+      console.log('@' + v + 'keyframes' + ' ' + moreUtils.getCanonicalName(data.name));
       // if there's only one color, push the same on again
       // so that we have it twice in the array (for 0% and 100%)
       if (data.colors.length === 1) data.colors.push(data.colors[0]);
@@ -36,12 +37,12 @@ ToCss.prototype._transform = function(chunk, enc, cb) {
         rule = '  ' + init + '% {\n';
         rule += '    background: ' + c + ';\n';
         rule += '  }';
-        console.log(a.length-1, i, init, c);
+        console.log(a.length - 1, i, init, c);
         init += diff;
         return rule;
       });
       rules = rules.join('\n');
-      return '@' + v + 'keyframes' + ' ' + data.name.replace(/[\W]/g, '') + ' {\n' + rules + '\n}\n';
+      return '@' + v + 'keyframes' + ' ' + moreUtils.getCanonicalName(data.name) + ' {\n' + rules + '\n}\n';
     });
     vendorPrefixAnimsArray = vendorPrefixAnimsArray.join('\n');
     this.push(vendorPrefixAnimsArray);

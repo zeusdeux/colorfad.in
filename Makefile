@@ -1,7 +1,7 @@
 # folders
 BIN          = $(NODE_MODULES)/.bin
-BUILDCSS        = ./build/css
-BUILDJS        = ./build/js
+BUILDCSS     = ./public/css
+BUILDJS      = ./public/js
 DATA         = ./data
 NODE_MODULES = ./node_modules
 SRC          = ./src
@@ -31,20 +31,24 @@ $(BUILDJS)/main.min.js: $(BUILDJS)/main.js
   --comments \
   --stats
 
-$(BUILDJS)/main.js: $(MAIN) $(SRC)/utils.js $(DATA)/animations.json $(NODE_MODULES)/jquery
+$(BUILDJS)/main.js: $(MAIN) $(SRC)/utils.js $(DATA)/animations.json $(NODE_MODULES)/jquery $(NODE_MODULES)/zeroclipboard/dist/ZeroClipboard.js
 	$(BIN)/browserify $(MAIN) -o $@
 
-$(BUILDCSS)/main.min.css: $(BUILDCSS)/animations.css $(BUILDCSS)/style.css $(BUILDCSS)/flaticon.css
+$(BUILDCSS)/main.min.css: $(BUILDCSS)/animations.css $(BUILDCSS)/style.prefixed.css $(BUILDCSS)/flaticon.css
 	$(BIN)/cleancss $^ -o $(BUILDCSS)/main.min.css -d
 
 $(BUILDCSS)/animations.css: $(DATA)/animations.json $(SRC)/ToCss.js $(SRC)/makeAnimationsCss.js
 	node $(SRC)/makeAnimationsCss.js
+
+$(BUILDCSS)/style.prefixed.css: $(BUILDCSS)/style.css
+	$(BIN)/autoprefixer -o $@ $^
 
 clean:
 	$(RM) $(BUILDJS)/main.js
 	$(RM) $(BUILDJS)/main.min.js
 	$(RM) $(BUILDJS)/main.min.map
 	$(RM) $(BUILDCSS)/animations.css
+	$(RM) $(BUILDCSS)/style.prefixed.css
 	$(RM) $(BUILDCSS)/main.min.css
 
 .PHONY: all jshint jsonlint customDataChecks clean

@@ -1,0 +1,292 @@
+html, body, .main-container, .btns-container, .canvas {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  color: #fff;
+  background: #222;
+  font-family: 'PT Serif', 'Garamond', serif;
+}
+h1, h2, h3, h4, h5, h6, .modal-body .pure-button, .text-container {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.main-container {
+  -webkit-transition: all 200ms ease;
+          transition: all 200ms ease;
+}
+body.modal-active .main-container {
+  z-index: -1;
+  -webkit-filter: blur(0.06em);
+          filter: blur(0.06em);
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+body.modal-active .modals-container {
+  opacity: 1;
+  z-index: 100;
+}
+body.modal-active, .help-modal.show, body.modal-active, .contrib-modal.show {
+  opacity: 1;
+}
+body.modal-active .modal.scale.show {
+  z-index: 100;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.modals-container {
+  top: 50%;
+  left: 50%;
+  padding: 0;
+  opacity: 0;
+  z-index: -1;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  padding: 10px 25px;
+  margin-top: -150px;
+  margin-left: -250px;
+  border-radius: 10px;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -webkit-transition: all 200ms ease;
+          transition: all 200ms ease;
+}
+.modal {
+  top: 0;
+  left: 0;
+  color: #777;
+  width: inherit;
+  height: inherit;
+  padding: 10px 25px;
+  position: absolute;
+  border-radius: 1px;
+  background: #fff;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -webkit-transition: all 200ms ease;
+          transition: all 200ms ease;
+  box-shadow: 6px 6px 15px -3px #303030;
+}
+.modal a {
+  color: #fff;
+}
+.modal p {
+  margin-top: 1.5em;
+}
+.modal-header {
+  position: relative;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.62);
+}
+.contrib-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.62);
+}
+.help-modal .modal-header {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.62);
+}
+.modal-header .cross {
+  top: -5px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  line-height: 2.3em;
+  position: absolute;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -webkit-transition: all 200ms ease;
+          transition: all 200ms ease;
+}
+.modal-header .cross:hover {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.modal-body .pure-button {
+  color: #fff;
+  margin-left: 10px;
+  background: #12BD9B;
+  -webkit-transition: all 200ms ease;
+          transition: all 200ms ease;
+}
+.modal-body .pure-button:hover {
+  background: #0c9479;
+}
+.pure-button.contrib-button {
+  background: #E4116E;
+}
+.pure-button.contrib-button:hover {
+  background: #b40d57;
+}
+.pure-button.share-button {
+  background: #892FC5;
+}
+.pure-button.share-button:hover {
+  background: #500b7e;
+}
+.pure-button.export-button {
+  background: #3D49CC;
+}
+.pure-button.export-button:hover {
+  background: #2a328e;
+}
+.help-modal, .contrib-modal {
+  opacity: 0;
+}
+.help-modal a {
+  color: #777;
+}
+.help-modal .actions {
+  margin-top: 30px;
+}
+.contrib-modal {
+  color: #fff;
+  background: #E4116E;
+}
+.share-modal .copy-link-button {
+  width: 150px;
+}
+.share-modal .social-share-btns-container {
+  margin: 1.5em 0;
+}
+.scale {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+.monospace {
+  font-family: monospace;
+}
+.btns-container {
+  position: relative;
+  z-index: 0;
+}
+.canvas {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+  -webkit-transition: animation 2s ease-in, -webkit-animation 2s ease-in;
+          transition: animation 2s ease-in, -webkit-animation 2s ease-in;
+}
+.text-container {
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  position: fixed;
+}
+.text {
+  letter-spacing: 0.7em;
+}
+.info {
+  top: 40px;
+  left: 20px;
+  opacity: 0;
+  z-index: 1;
+  width: 134px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.75);
+  -webkit-transition: opacity 200ms ease-in;
+          transition: opacity 200ms ease-in;
+}
+.info span {
+  padding-right: 10px;
+  line-height: 2em;
+}
+body:hover .info {
+  opacity: 1;
+}
+.hexcode {
+  font-family: monospace;
+}
+.arrow-left .arrow, .arrow-right .arrow {
+  width: 60px;
+  opacity: 0;
+  padding: 20px 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.43);
+  -webkit-transition: opacity 200ms ease-in;
+          transition: opacity 200ms ease-in;
+  background: rgba(255, 255, 255, 0.6);
+}
+body:hover .arrow-left .arrow, body:hover .arrow-right .arrow {
+  opacity: 0.5;
+}
+.arrow-left p.arrow:hover, .arrow-right p.arrow:hover {
+  opacity: 0.95;
+}
+.arrow-right {
+  position: relative;
+  right: 0;
+}
+.arrow-right .arrow {
+  float: right;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.arrow-left .arrow {
+  text-align: center;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.logo, .social {
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.75);
+  -webkit-transition: opacity 200ms ease-in;
+          transition: opacity 200ms ease-in;
+}
+.logo {
+  left: 20px;
+  bottom: 10px;
+}
+.social {
+  right: 20px;
+  bottom: 5px;
+}
+body:hover .logo, body:hover .social {
+  opacity: 1;
+}
+.logo p > a, .social p > a {
+  color: rgba(255, 255, 255, 0.75);
+}
+.social p {
+  display: inline-block;
+}
+.social p > a {
+  font-size: 2em;
+  margin-right: 10px;
+}
+.help {
+  cursor: pointer;
+}
+.hcenter {
+  text-align: center;
+}
+.vcenter-parent {
+  display: table;
+}
+.vcenter {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  .info {
+    top: 10px;
+  }
+  .social {
+    bottom: 0;
+  }
+  /* hide nav arrows on phones cuz whole screen is clickable */
+  body:hover .arrow-left .arrow, body:hover .arrow-right .arrow {
+    opacity: 0;
+  }
+  .arrow-left p.arrow:hover, .arrow-right p.arrow:hover {
+    opacity: 0;
+  }
+}

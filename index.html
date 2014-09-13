@@ -7,65 +7,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>colorfad.in</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300|PT+Serif' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css">
-  <link rel="stylesheet" href="/build/css/main.min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/buttons-min.css">
+  <link rel="stylesheet" href="/public/css/main.min.css">
 </head>
 
 <body>
-  <!-- This contains the animating colors -->
-  <div class="canvas"></div>
-  <div class="text-container hcenter vcenter-parent">
-    <p class="text vcenter"></p>
+  <div class="main-container">
+    <!-- This contains the animating colors -->
+    <section class="canvas"></section>
+    <section class="text-container hcenter vcenter-parent">
+      <p class="text vcenter"></p>
+    </section>
+    <!-- This contains the animation info -->
+    <section class="info top-left">
+      <p class="animation-name"></p>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+      <span class="hexcode" hidden></span>
+    </section>
+    <!-- This contains the site logo -->
+    <aside class="logo bottom-left">
+      <p class="monospace">
+        <a href="http://colorfad.in" target="_blank">colorfad.in</a>
+      </p>
+    </aside>
+    <!-- This contains the social stuff -->
+    <aside class="social bottom-right">
+      <p>
+        <a href="https://github.com/zeusdeux/colorfad.in" target="_blank"><i class="fa fa-github"></i></a>
+      </p>
+      <p>
+        <a href="https://twitter.com/muditameta" target="_blank"><i class="fa fa-twitter"></i></a>
+      </p>
+      <p>
+        <a class="help help-button"><i class="fa fa-question-circle"></i></a>
+      </p>
+    </aside>
+    <!-- This contains the nav buttons -->
+    <section class="btns-container vcenter-parent">
+      <div class="arrow-left vcenter">
+        <p class="arrow flaticon-previous11"></p>
+      </div>
+      <div class="arrow-right vcenter">
+        <p class="arrow flaticon-next15"></p>
+      </div>
+    </section>
   </div>
-  <!-- This contains the animation info -->
-  <div class="info top-left">
-    <p class="animation-name"></p>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
-    <span class="hexcode" hidden></span>
+  <div class="modals-container hcenter">
+    <div class="modal scale help-modal">
+      <div class="modal-header">
+        <h2>Help</h2>
+        <span class="cross"><i class="fa fa-times fa-lg"></i>
+        </span>
+      </div>
+      <div class="modal-body hcenter">
+        <p>This is small project by <a href="https://twitter.com/muditameta">@muditameta</a>. It's inspired by <a href="http://uigradients.com">uigradients.com</a>.</p>
+        <div class="actions">
+          <button class="pure-button export-button" title="Click to export animation code or press e">
+            <i class="fa fa-rocket"></i>
+            Export
+          </button>
+          <button class="pure-button share-button" title="Click to share this page or press x">
+            <i class="fa fa-share"></i>
+            Share
+          </button>
+          <button class="pure-button contrib-button" title="Click for info on how to contribute or press c">
+            <i class="fa fa-plus"></i>
+            Contribute
+          </button>
+        </div>
+        <!-- <div class="kbd-shortcuts">
+          <h4>Keyboard shortcuts</h4>
+          <p>
+            <code>?</code> - help
+            <code>c</code> - how to contribute
+            <code>x</code> - export
+            <code>s</code> - share
+            <code>esc</code> - close modal
+          </p>
+        </div> -->
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+    <div class="modal scale contrib-modal">
+      <div class="modal-header">
+        <h2>Contribute</h2>
+        <span class="cross"><i class="fa fa-times fa-lg"></i>
+        </span>
+      </div>
+      <div class="modal-body hcenter">
+        <p>
+          You can contribute by going to the <a href="https://github.com/zeusdeux/colorfad.in">github</a> repository, forking it, adding your colors to <a href="https://github.com/zeusdeux/colorfad.in/blob/master/data/animations.json">this</a> file (
+          <code>animations.json</code>) and sending a pull request.
+        </p>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+    <div class="modal scale share-modal">
+      <div class="modal-header">
+        <h2>Share</h2>
+        <span class="cross"><i class="fa fa-times fa-lg"></i>
+        </span>
+      </div>
+      <div class="modal-body hcenter">
+        <div class="social-share-btns-container">
+          <a class="twitter-share-button" href="https://twitter.com/share" data-text="Checkout color fading animations at" data-url="http://colorfad.in" data-hashtags="colorfadin" data-size="large">
+             Tweet
+          </a>
+          <div class="fb-share-button" data-href="http://colorfad.in" data-width="76" data-layout="button_count" style="display: inline-block; position: relative; top: -8px"></div>
+        </div>
+        <p> or </p>
+        <div class="share-link">
+          <button class="pure-button copy-link-button" title="Click to copy link to clipboard">
+            Click to copy link
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
   </div>
-  <!-- This contains the site logo -->
-  <div class="logo bottom-left">
-    <p class="monospace"><a href="http://colorfad.in" target="_blank">colorfad.in</a>
-    </p>
-  </div>
-  <div class="social bottom-right">
-    <p><a href="https://github.com/zeusdeux/colorfad.in" target="_blank"><i class="fa fa-github"></i></a>
-    </p>
-    <p><a href="https://twitter.com/muditameta" target="_blank"><i class="fa fa-twitter"></i></a>
-    </p>
-    <p><a class="help"><i class="fa fa-question-circle"></i></a>
-    </p>
-  </div>
-  <section class="main-container vcenter-parent">
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    <div class="arrow-left vcenter">
-      <p class="arrow flaticon-previous11"></p>
-    </div>
-    <div class="arrow-right vcenter">
-      <p class="arrow flaticon-next15"></p>
-    </div>
-  </section>
-  <!-- <div class="help-container" hidden>
-    <h1>Tips &amp; tricks</h1>
-    <hr />
-    <ul>
-      <li>Navigate using left and right arrow keys or taps on the screen</li>
-      <li>Press <code>c</code> to learn how to contribute or click <button>this</button></li>
-      <li>Press <code>x</code> to export code or click this <button>this</button></li>
-      <li>Press <code>?</code> to open help or click the <code>?</code> on screen</li>
-    </ul>
-  </div> -->
-  <script src="/build/js/main.min.js"></script>
+    ga('create', 'UA-54781709-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script src="/public/js/main.min.js"></script>
+  <script type="text/javascript">
+    window.twttr = (function(d, s, id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = {
+        _e: [],
+        ready: function(f) {
+          t._e.push(f)
+        }
+      })
+    }(document, "script", "twitter-wjs"));
+  </script>
 </body>
 
 </html>
