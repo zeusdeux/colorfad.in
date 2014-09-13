@@ -9,4 +9,5 @@ var animationsRS = fs.createReadStream(path.resolve('data/animations.json'), {
 var animationsWS = fs.createWriteStream(path.resolve('public/css/animations.css'), {
   encoding: 'utf-8'
 });
+
 animationsRS.pipe(jsonParser).pipe(new ToCss).pipe(animationsWS);

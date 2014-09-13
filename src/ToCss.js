@@ -1,4 +1,4 @@
-var util = require('util');
+var util      = require('util');
 var moreUtils = require('./utils');
 var Transform = require('stream').Transform;
 

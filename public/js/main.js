@@ -7,7 +7,7 @@ module.exports=[{
   "text": "COLOR"
 }, {
   "name": "Winter Solstice",
-  "duration": "60s",
+  "duration": "20s",
   "timingFunction": "ease",
   "colors": ["#D3959B", "#BFE6BA", "#403B4A", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA", "#E7E9BB", "#D3959B", "#BFE6BA"],
   "text": "OMGLIKEWTFBBQ"
@@ -11591,7 +11591,11 @@ copyLinkButtonClient.on('ready', function(event) {
     }, 1000);
   });
   copyLinkButtonClient.on('aftercopy', function(event) {
-    console.log('Copied text to clipboard: ' + event.data['text/plain']);
+    console.log('colorfad.in: Copied text to clipboard: ' + event.data['text/plain']);
+  });
+  copyLinkButtonClient.on('error', function(event) {
+    console.log( 'colofad.in: ZeroClipboard error of type "' + event.name + '": ' + event.message );
+    ZC.destroy();
   });
 });
 

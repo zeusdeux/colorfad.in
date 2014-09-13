@@ -62,7 +62,11 @@ copyLinkButtonClient.on('ready', function(event) {
     }, 1000);
   });
   copyLinkButtonClient.on('aftercopy', function(event) {
-    console.log('Copied text to clipboard: ' + event.data['text/plain']);
+    console.log('colorfad.in: Copied text to clipboard: ' + event.data['text/plain']);
+  });
+  copyLinkButtonClient.on('error', function(event) {
+    console.log( 'colofad.in: ZeroClipboard error of type "' + event.name + '": ' + event.message );
+    ZC.destroy();
   });
 });
 
