@@ -12,6 +12,9 @@ body {
 h1, h2, h3, h4, h5, h6, .modal-body .pure-button, .text-container {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+code {
+  white-space: pre;
+}
 .main-container {
   transition: all 200ms ease;
 }
@@ -65,7 +68,7 @@ body.modal-active .modal.scale.show {
   color: #fff;
 }
 .modal p {
-  margin-top: 1.5em;
+  margin: 1.5em;
 }
 .modal-header {
   position: relative;
@@ -131,11 +134,16 @@ body.modal-active .modal.scale.show {
   color: #fff;
   background: #E4116E;
 }
-.share-modal .copy-link-button {
+.share-modal .copy-link-button, .export-modal .copy-code-button {
   width: 150px;
 }
 .share-modal .social-share-btns-container {
   margin: 1.5em 0;
+}
+.export-modal .code-body-container {
+  margin: 1.5em;
+  height: 120px;
+  overflow: scroll;
 }
 .scale {
   transform: scale(0);

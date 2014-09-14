@@ -12,6 +12,7 @@ ZC.config({
 
 var currIndex = utils.getRandomIndex(animations);
 var copyLinkButtonClient = new ZC($('.copy-link-button'));
+var copyCodeButtonClient = new ZC($('.copy-code-button'));
 
 //all animation switches happen based on hash in the url
 //this big boy handles it all
@@ -50,9 +51,20 @@ $body.on('click', '.share-button', function() {
   $body.addClass('modal-active');
   $('.share-modal.scale').addClass('show');
 });
+$body.on('click', '.export-button', function() {
+  utils.getCSS(animations[currIndex], function(err, code){
+    if (err) console.error('colorfad.in: %o', err);
+    $('.export-modal .code-body').text(code);
+  });
 
-copyLinkButtonClient.on('ready', function(event) {
-  copyLinkButtonClient.on('copy', function(event) {
+  triggerEsc($body);
+
+  $body.addClass('modal-active');
+  $('.export-modal.scale').addClass('show');
+});
+
+copyLinkButtonClient.on('ready', function() {
+  copyLinkButtonClient.on('copy', function() {
     var copyBtn = $('.copy-link-button');
     var text = copyBtn.text();
     copyLinkButtonClient.setText(window.location.href);
@@ -65,6 +77,25 @@ copyLinkButtonClient.on('ready', function(event) {
     console.log('colorfad.in: Copied text to clipboard: ' + event.data['text/plain']);
   });
   copyLinkButtonClient.on('error', function(event) {
+    console.log( 'colofad.in: ZeroClipboard error of type "' + event.name + '": ' + event.message );
+    ZC.destroy();
+  });
+});
+
+copyCodeButtonClient.on('ready', function() {
+  copyCodeButtonClient.on('copy', function() {
+    var copyBtn = $('.copy-code-button');
+    var text = copyBtn.text();
+    copyCodeButtonClient.setText($('.export-modal .code-body').text());
+    copyBtn.text('Copied!');
+    window.setTimeout(function() {
+      copyBtn.text(text);
+    }, 1000);
+  });
+  copyCodeButtonClient.on('aftercopy', function(event) {
+    console.log('colorfad.in: Copied text to clipboard: ' + event.data['text/plain']);
+  });
+  copyCodeButtonClient.on('error', function(event) {
     console.log( 'colofad.in: ZeroClipboard error of type "' + event.name + '": ' + event.message );
     ZC.destroy();
   });
@@ -92,6 +123,10 @@ $body.on('keydown', function(e) {
   //'s' -> share modal toggle
   if (e.keyCode === 83) {
     $('.share-button').click();
+  }
+  //'x' or 'e' -> share modal toggle
+  if (e.keyCode === 88 || e.keyCode === 69) {
+    $('.export-button').click();
   }
 });
 

@@ -34,7 +34,7 @@ $(BUILDJS)/main.min.js: $(BUILDJS)/main.js
 $(BUILDJS)/main.js: $(MAIN) $(SRC)/utils.js $(DATA)/animations.json $(NODE_MODULES)/jquery $(NODE_MODULES)/zeroclipboard/dist/ZeroClipboard.js
 	$(BIN)/browserify $(MAIN) -o $@
 
-$(BUILDCSS)/main.min.css: $(BUILDCSS)/animations.css $(BUILDCSS)/style.prefixed.css $(BUILDCSS)/flaticon.css
+$(BUILDCSS)/main.min.css: $(BUILDCSS)/animations.css $(BUILDCSS)/style.prefixed.css $(BUILDCSS)/flaticon.css $(BUILDCSS)/prism.css
 	$(BIN)/cleancss $^ -o $(BUILDCSS)/main.min.css -d
 
 $(BUILDCSS)/animations.css: $(DATA)/animations.json $(SRC)/ToCss.js $(SRC)/makeAnimationsCss.js
