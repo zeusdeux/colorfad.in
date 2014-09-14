@@ -11583,8 +11583,9 @@ $body.on('click', '.share-button', function() {
 $body.on('click', '.export-button', function() {
   utils.getCSS(animations[currIndex], function(err, code){
     if (err) console.error('colorfad.in: %o', err);
-    $('.export-modal .code-body').text(code);
+    $('.export-modal .code-body').html(code);
   });
+  window.Prism.highlightAll();
 
   triggerEsc($body);
 
