@@ -15,7 +15,7 @@ You can contribute by doing the following:
 
 1. Fork this repository
 2. Add your code to [data/animations.json](https://github.com/zeusdeux/colorfad.in/blob/master/data/animations.json) at a random position (to minimize merge conflicts)
-3. Send a pull request
+3. Send a pull request (please make sure that the travis-ci build is a success)
 4. ???
 5. Profit
 
