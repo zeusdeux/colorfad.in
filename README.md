@@ -30,4 +30,8 @@ They are mentioned below:
 - `s`: share on twitter, facebook, etc
 - `esc`: close modal
 
+Oh and as Beyoncé would say, "if you like it then, you should put a star on it".
+
+Ok maybe she wouldn't say that but you get the idea :)
+
 
