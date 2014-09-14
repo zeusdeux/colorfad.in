@@ -23,7 +23,7 @@ You can contribute by doing the following:
 
 ##Misc info
 
-Since we needed to be able to use colorfad.in](http://colorfad.in) real fast, it has a good no., of keyboard shortcuts.
+Since we needed to be able to use [colorfad.in](http://colorfad.in) real fast, it has a good no., of keyboard shortcuts.
 
 They are mentioned below:
 - `? or /`: show help
