@@ -1,6 +1,8 @@
 colorfad.in
 ===========
 
+[![Build Status](https://travis-ci.org/zeusdeux/colorfad.in.svg?branch=master)](https://travis-ci.org/zeusdeux/colorfad.in)
+
 Color fading goodness.
 
 I wrote [colorfad.in](http://colorfad.in) to visualize color gradients over time.
