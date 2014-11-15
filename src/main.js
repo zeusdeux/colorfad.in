@@ -201,4 +201,17 @@ function setInfo() {
   }
 }
 
+function setModalMargin(){
+  var width;
+  var $modalContainer;
+
+  $modalContainer = $('.modals-container');
+  width = Math.round($modalContainer.outerWidth() / 2) * -1;
+  $modalContainer.css('margin-left', width);
+}
+
+setModalMargin();
+
+$(window).resize(setModalMargin);
+
 window.$ = $;
