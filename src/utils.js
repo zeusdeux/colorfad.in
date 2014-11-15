@@ -1,8 +1,3 @@
-/*function setCSS(node, property, value) {
-  $(node).css(property, value);
-  return true;
-}*/
-
 function getAnimationValue(array, index) {
   var curr = array[index];
   var duration = curr.duration.match(/\d+ms{1}|\d+s{1}/g);
