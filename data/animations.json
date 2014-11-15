@@ -1,19 +1,41 @@
 [{
   "name": "Numero Uno",
-  "duration": "40s",
+  "duration": "18s",
   "timingFunction": "ease",
-  "colors": ["#2BC0E4", "#EAECC6", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA"],
-  "text": "COLOR"
+  "colors": ["#2BC0E4", "#65EC95", "#EAC076", "#E9898F", "#D33D8A", "#7254E6"],
+  "text": "COLOR",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
 }, {
   "name": "Winter Solstice",
-  "duration": "20s",
-  "timingFunction": "ease",
-  "colors": ["#D3959B", "#BFE6BA", "#403B4A", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA", "#E7E9BB", "#D3959B", "#BFE6BA"],
-  "text": "OMGLIKEWTFBBQ"
-}, {
-  "name": "Jungle",
   "duration": "35s",
   "timingFunction": "ease",
-  "colors": ["#E7E9BB", "#D3959B", "#D3959B", "#D3959B", "#BFE6BA"],
-  "text": ""
+  "colors": ["#D3959B", "#BFE6BA", "#403B4A", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA", "#E7E9BB", "#D3959B", "#BFE6BA"],
+  "text": "OMGLIKEWTFBBQ",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
+}, {
+  "name": "Cocktail",
+  "duration": "20s",
+  "timingFunction": "ease",
+  "colors": ["#FC354C", "#0ABFBC", "#0ABF6D", "#C9FF9E", "#F4B23B", "#F43B3B"],
+  "text": "",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
+}, {
+  "name": "Firestarter",
+  "duration": "10s",
+  "timingFunction": "ease-in",
+  "colors": ["#C21500", "#FFC500", "#FF5252", "#665296"],
+  "text": "LIES",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
+}, {
+  "name": "Dirt Nasty",
+  "duration": "15s",
+  "timingFunction": "linear",
+  "colors": ["#302017", "#000000", "#4C2364", "#2F4D3D", "#8E306D", "#FFFFFF"],
+  "text": "EWWWWW?",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
 }]
