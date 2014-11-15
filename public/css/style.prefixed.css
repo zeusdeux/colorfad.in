@@ -198,7 +198,7 @@ body.modal-active .modal.scale.show {
   padding-right: 10px;
   line-height: 2em;
 }
-body:hover .info {
+body:hover .info, body:focus .info  {
   opacity: 1;
 }
 .hexcode {
@@ -222,7 +222,7 @@ body:hover .info {
           transition: opacity 200ms ease-in;
   background: rgba(255, 255, 255, 0.6);
 }
-body:hover .arrow-left .arrow, body:hover .arrow-right .arrow {
+body:hover .arrow-left .arrow, body:hover .arrow-right .arrow, body:focus .arrow-left .arrow, body:focus .arrow-right .arrow {
   opacity: 0.5;
 }
 .arrow-left p.arrow:hover, .arrow-right p.arrow:hover {
@@ -259,7 +259,7 @@ body:hover .arrow-left .arrow, body:hover .arrow-right .arrow {
   right: 20px;
   bottom: 5px;
 }
-body:hover .logo, body:hover .social {
+body:hover .logo, body:hover .social, body:focus .logo, body:focus .social {
   opacity: 1;
 }
 .logo p > a, .social p > a {
@@ -293,7 +293,7 @@ body:hover .logo, body:hover .social {
     bottom: 0;
   }
   /* hide nav arrows on phones cuz whole screen is clickable */
-  body:hover .arrow-left .arrow, body:hover .arrow-right .arrow {
+  body:hover .arrow-left .arrow, body:hover .arrow-right .arrow, body:focus .arrow-left .arrow, body:focus .arrow-right .arrow {
     opacity: 0;
   }
   .arrow-left p.arrow:hover, .arrow-right p.arrow:hover {
