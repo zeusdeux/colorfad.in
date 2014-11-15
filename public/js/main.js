@@ -11705,11 +11705,6 @@ function setInfo() {
 window.$ = $;
 
 },{"../data/animations.json":1,"./utils":5,"jquery":2,"zeroclipboard":3}],5:[function(require,module,exports){
-/*function setCSS(node, property, value) {
-  $(node).css(property, value);
-  return true;
-}*/
-
 function getAnimationValue(array, index) {
   var curr = array[index];
   var duration = curr.duration.match(/\d+ms{1}|\d+s{1}/g);
