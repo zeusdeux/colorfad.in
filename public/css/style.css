@@ -140,7 +140,7 @@ body.modal-active .modal.scale.show {
 .export-modal .code-body-container {
   margin: 1.5em;
   height: 120px;
-  overflow: scroll;
+  overflow: hidden;
 }
 .scale {
   transform: scale(0);
@@ -189,7 +189,7 @@ body:hover .info {
   font-family: monospace;
 }
 .arrow-left .arrow, .arrow-right .arrow {
-  width: 60px;
+  width: 40px;
   opacity: 0;
   padding: 20px 0;
   cursor: pointer;
