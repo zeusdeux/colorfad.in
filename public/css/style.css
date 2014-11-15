@@ -276,7 +276,7 @@ body:hover .logo, body:hover .social, body:focus .logo, body:focus .social {
   }
   /* hide nav arrows on phones cuz whole screen is clickable */
   body:hover .arrow-left .arrow, body:hover .arrow-right .arrow, body:focus .arrow-left .arrow, body:focus .arrow-right .arrow {
-    opacity: 1;
+    opacity: 0.5;
   }
   .arrow-left p.arrow:hover, .arrow-right p.arrow:hover {
     opacity: 0;
