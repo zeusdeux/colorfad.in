@@ -1,22 +1,44 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports=[{
   "name": "Numero Uno",
-  "duration": "40s",
+  "duration": "18s",
   "timingFunction": "ease",
-  "colors": ["#2BC0E4", "#EAECC6", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA"],
-  "text": "COLOR"
+  "colors": ["#2BC0E4", "#65EC95", "#EAC076", "#E9898F", "#D33D8A", "#7254E6"],
+  "text": "COLOR",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
 }, {
   "name": "Winter Solstice",
-  "duration": "20s",
-  "timingFunction": "ease",
-  "colors": ["#D3959B", "#BFE6BA", "#403B4A", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA", "#E7E9BB", "#D3959B", "#BFE6BA"],
-  "text": "OMGLIKEWTFBBQ"
-}, {
-  "name": "Jungle",
   "duration": "35s",
   "timingFunction": "ease",
-  "colors": ["#E7E9BB", "#D3959B", "#D3959B", "#D3959B", "#BFE6BA"],
-  "text": ""
+  "colors": ["#D3959B", "#BFE6BA", "#403B4A", "#403B4A", "#E7E9BB", "#D3959B", "#BFE6BA", "#E7E9BB", "#D3959B", "#BFE6BA"],
+  "text": "OMGLIKEWTFBBQ",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
+}, {
+  "name": "Cocktail",
+  "duration": "20s",
+  "timingFunction": "ease",
+  "colors": ["#FC354C", "#0ABFBC", "#0ABF6D", "#C9FF9E", "#F4B23B", "#F43B3B"],
+  "text": "",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
+}, {
+  "name": "Firestarter",
+  "duration": "10s",
+  "timingFunction": "ease-in",
+  "colors": ["#C21500", "#FFC500", "#FF5252", "#665296"],
+  "text": "LIES",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
+}, {
+  "name": "Dirt Nasty",
+  "duration": "15s",
+  "timingFunction": "linear",
+  "colors": ["#302017", "#000000", "#4C2364", "#2F4D3D", "#8E306D", "#FFFFFF"],
+  "text": "EWWWWW?",
+  "author": "zeusdeux",
+  "authorURL": "https://twitter.com/muditameta"
 }]
 
 },{}],2:[function(require,module,exports){
@@ -11527,21 +11549,22 @@ return jQuery;
   return this || window;
 }());
 },{}],4:[function(require,module,exports){
-var $ = require('jquery');
-var utils = require('./utils');
-var ZC = require('zeroclipboard');
-var animations = require('../data/animations.json');
+var $                    = require('jquery');
+var utils                = require('./utils');
+var ZC                   = require('zeroclipboard');
+var animations           = require('../data/animations.json');
 
-var $canvas = $('.canvas');
-var $body = $('body');
+var $canvas              = $('.canvas');
+var $body                = $('body');
 
 ZC.config({
   swfPath: 'node_modules/zeroclipboard/dist/ZeroClipboard.swf'
 });
 
-var currIndex = utils.getRandomIndex(animations);
+var currIndex            = utils.getRandomIndex(animations);
 var copyLinkButtonClient = new ZC($('.copy-link-button'));
 var copyCodeButtonClient = new ZC($('.copy-code-button'));
+
 
 //all animation switches happen based on hash in the url
 //this big boy handles it all
@@ -11596,7 +11619,8 @@ $body.on('click', '.export-button', function() {
 copyLinkButtonClient.on('ready', function() {
   copyLinkButtonClient.on('copy', function() {
     var copyBtn = $('.copy-link-button');
-    var text = copyBtn.text();
+    var text    = copyBtn.text();
+
     copyLinkButtonClient.setText(window.location.href);
     copyBtn.text('Copied!');
     window.setTimeout(function() {
@@ -11615,7 +11639,8 @@ copyLinkButtonClient.on('ready', function() {
 copyCodeButtonClient.on('ready', function() {
   copyCodeButtonClient.on('copy', function() {
     var copyBtn = $('.copy-code-button');
-    var text = copyBtn.text();
+    var text    = copyBtn.text();
+
     copyCodeButtonClient.setText($('.export-modal .code-body').text());
     copyBtn.text('Copied!');
     window.setTimeout(function() {
@@ -11686,20 +11711,45 @@ function setAnimationText() {
 }
 
 function setInfo() {
-  var curr = animations[currIndex];
-  var animName = curr.name;
-  var colors = curr.colors;
-  var spansCollection = $('.hexcode');
+  var curr                      = animations[currIndex];
+  var animName                  = curr.name;
+  var colors                    = curr.colors;
+  var author                    = curr.author;
+  var authorURL                 = curr.authorURL;
 
-  $('.info .animation-name').text(animName);
-  spansCollection.each(function() {
-    $(this).attr('hidden', 'hidden');
-  });
+  /**
+   * memoize elements for perf
+   */
+  setInfo.$author               = setInfo.$author || $('.author');
+  setInfo.$spansCollectionItems = setInfo.$spansCollectionItems || [];
+  setInfo.$authorLink           = setInfo.$authorLink || $('.author > a');
+  setInfo.$authorName           = setInfo.$authorName || $('.author-name');
+  setInfo.$spansCollection      = setInfo.$spansCollection || $('.hexcode');
+  setInfo.$animName             = setInfo.$animName || $('.info .animation-name');
+
+  setInfo.$animName.text(animName);
+  setInfo.$spansCollection.attr('hidden', 'hidden');
+
   colors.forEach(function(v, i) {
-    var $span = $(spansCollection[i]);
+    var $span;
+
+    /**
+     * colours are limited to hexcode divs which are 20 as of now
+     */
+    i = i % setInfo.$spansCollection.length;
+    $span = setInfo.$spansCollectionItems[i] || (setInfo.$spansCollectionItems[i] = $(setInfo.$spansCollection[i]));
     $span.text(v.toUpperCase());
     $span.removeAttr('hidden');
   });
+
+  if (author) {
+    setInfo.$author.show();
+    setInfo.$authorName.text(author);
+    setInfo.$authorLink.attr('href', authorURL);
+  }
+  else {
+    setInfo.$author.hide();
+  }
 }
 
 window.$ = $;

@@ -50,8 +50,7 @@ body.modal-active .modal.scale.show {
   margin-top: -150px;
   margin-left: -250px;
   border-radius: 10px;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all 200ms ease;
           transition: all 200ms ease;
 }
@@ -65,8 +64,7 @@ body.modal-active .modal.scale.show {
   position: absolute;
   border-radius: 1px;
   background: #fff;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all 200ms ease;
           transition: all 200ms ease;
   box-shadow: 6px 6px 15px -3px #303030;
@@ -95,8 +93,7 @@ body.modal-active .modal.scale.show {
   cursor: pointer;
   line-height: 2.3em;
   position: absolute;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all 200ms ease;
           transition: all 200ms ease;
 }
@@ -206,6 +203,14 @@ body:hover .info {
 }
 .hexcode {
   font-family: monospace;
+}
+.author {
+  font-family: monospace;
+  margin-top: 8px;
+  display: inline-block;
+}
+.author a {
+  color: rgba(255, 255, 255, 0.75);
 }
 .arrow-left .arrow, .arrow-right .arrow {
   width: 40px;

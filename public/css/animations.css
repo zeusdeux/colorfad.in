@@ -3,19 +3,19 @@
     background: #2BC0E4;
   }
   20% {
-    background: #EAECC6;
+    background: #65EC95;
   }
   40% {
-    background: #403B4A;
+    background: #EAC076;
   }
   60% {
-    background: #E7E9BB;
+    background: #E9898F;
   }
   80% {
-    background: #D3959B;
+    background: #D33D8A;
   }
   100% {
-    background: #BFE6BA;
+    background: #7254E6;
   }
 }
 
@@ -24,19 +24,19 @@
     background: #2BC0E4;
   }
   20% {
-    background: #EAECC6;
+    background: #65EC95;
   }
   40% {
-    background: #403B4A;
+    background: #EAC076;
   }
   60% {
-    background: #E7E9BB;
+    background: #E9898F;
   }
   80% {
-    background: #D3959B;
+    background: #D33D8A;
   }
   100% {
-    background: #BFE6BA;
+    background: #7254E6;
   }
 }
 @-webkit-keyframes WinterSolstice {
@@ -104,38 +104,114 @@
     background: #BFE6BA;
   }
 }
-@-webkit-keyframes Jungle {
+@-webkit-keyframes Cocktail {
   0% {
-    background: #E7E9BB;
+    background: #FC354C;
   }
-  25% {
-    background: #D3959B;
+  20% {
+    background: #0ABFBC;
   }
-  50% {
-    background: #D3959B;
+  40% {
+    background: #0ABF6D;
   }
-  75% {
-    background: #D3959B;
+  60% {
+    background: #C9FF9E;
+  }
+  80% {
+    background: #F4B23B;
   }
   100% {
-    background: #BFE6BA;
+    background: #F43B3B;
   }
 }
 
-@keyframes Jungle {
+@keyframes Cocktail {
   0% {
-    background: #E7E9BB;
+    background: #FC354C;
   }
-  25% {
-    background: #D3959B;
+  20% {
+    background: #0ABFBC;
   }
-  50% {
-    background: #D3959B;
+  40% {
+    background: #0ABF6D;
   }
-  75% {
-    background: #D3959B;
+  60% {
+    background: #C9FF9E;
+  }
+  80% {
+    background: #F4B23B;
   }
   100% {
-    background: #BFE6BA;
+    background: #F43B3B;
+  }
+}
+@-webkit-keyframes Firestarter {
+  0% {
+    background: #C21500;
+  }
+  33% {
+    background: #FFC500;
+  }
+  66% {
+    background: #FF5252;
+  }
+  100% {
+    background: #665296;
+  }
+}
+
+@keyframes Firestarter {
+  0% {
+    background: #C21500;
+  }
+  33% {
+    background: #FFC500;
+  }
+  66% {
+    background: #FF5252;
+  }
+  100% {
+    background: #665296;
+  }
+}
+@-webkit-keyframes DirtNasty {
+  0% {
+    background: #302017;
+  }
+  20% {
+    background: #000000;
+  }
+  40% {
+    background: #4C2364;
+  }
+  60% {
+    background: #2F4D3D;
+  }
+  80% {
+    background: #8E306D;
+  }
+  100% {
+    background: #FFFFFF;
+  }
+}
+
+@keyframes DirtNasty {
+  0% {
+    background: #302017;
+  }
+  20% {
+    background: #000000;
+  }
+  40% {
+    background: #4C2364;
+  }
+  60% {
+    background: #2F4D3D;
+  }
+  80% {
+    background: #8E306D;
+  }
+  100% {
+    background: #FFFFFF;
   }
 }
