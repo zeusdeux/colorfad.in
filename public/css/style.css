@@ -38,11 +38,10 @@ body.modal-active .modal.scale.show {
   opacity: 0;
   z-index: -1;
   width: 500px;
-  height: 300px;
+  min-height: 300px;
   position: absolute;
   padding: 10px 25px;
   margin-top: -150px;
-  margin-left: -250px;
   border-radius: 10px;
   box-sizing: border-box;
   transition: all 200ms ease;
@@ -53,7 +52,7 @@ body.modal-active .modal.scale.show {
   color: #777;
   width: inherit;
   height: inherit;
-  padding: 10px 25px;
+  padding: 10px 25px 40px;
   position: absolute;
   border-radius: 1px;
   background: #fff;
@@ -273,6 +272,9 @@ body:hover .logo, body:hover .social, body:focus .logo, body:focus .social {
   }
   .social {
     bottom: 0;
+  }
+  .modals-container {
+    width: 230px;
   }
   /* hide nav arrows on phones cuz whole screen is clickable */
   body:hover .arrow-left .arrow, body:hover .arrow-right .arrow, body:focus .arrow-left .arrow, body:focus .arrow-right .arrow {
