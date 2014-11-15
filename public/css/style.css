@@ -188,6 +188,14 @@ body:hover .info {
 .hexcode {
   font-family: monospace;
 }
+.author {
+  font-family: monospace;
+  margin-top: 8px;
+  display: inline-block;
+}
+.author a {
+  color: rgba(255, 255, 255, 0.75);
+}
 .arrow-left .arrow, .arrow-right .arrow {
   width: 40px;
   opacity: 0;
