@@ -1,18 +1,19 @@
-var $ = require('jquery');
-var utils = require('./utils');
-var ZC = require('zeroclipboard');
-var animations = require('../data/animations.json');
+var $                    = require('jquery');
+var utils                = require('./utils');
+var ZC                   = require('zeroclipboard');
+var animations           = require('../data/animations.json');
 
-var $canvas = $('.canvas');
-var $body = $('body');
+var $canvas              = $('.canvas');
+var $body                = $('body');
 
 ZC.config({
   swfPath: 'node_modules/zeroclipboard/dist/ZeroClipboard.swf'
 });
 
-var currIndex = utils.getRandomIndex(animations);
+var currIndex            = utils.getRandomIndex(animations);
 var copyLinkButtonClient = new ZC($('.copy-link-button'));
 var copyCodeButtonClient = new ZC($('.copy-code-button'));
+
 
 //all animation switches happen based on hash in the url
 //this big boy handles it all
@@ -67,7 +68,8 @@ $body.on('click', '.export-button', function() {
 copyLinkButtonClient.on('ready', function() {
   copyLinkButtonClient.on('copy', function() {
     var copyBtn = $('.copy-link-button');
-    var text = copyBtn.text();
+    var text    = copyBtn.text();
+
     copyLinkButtonClient.setText(window.location.href);
     copyBtn.text('Copied!');
     window.setTimeout(function() {
@@ -86,7 +88,8 @@ copyLinkButtonClient.on('ready', function() {
 copyCodeButtonClient.on('ready', function() {
   copyCodeButtonClient.on('copy', function() {
     var copyBtn = $('.copy-code-button');
-    var text = copyBtn.text();
+    var text    = copyBtn.text();
+
     copyCodeButtonClient.setText($('.export-modal .code-body').text());
     copyBtn.text('Copied!');
     window.setTimeout(function() {
@@ -157,20 +160,45 @@ function setAnimationText() {
 }
 
 function setInfo() {
-  var curr = animations[currIndex];
-  var animName = curr.name;
-  var colors = curr.colors;
-  var spansCollection = $('.hexcode');
+  var curr                      = animations[currIndex];
+  var animName                  = curr.name;
+  var colors                    = curr.colors;
+  var author                    = curr.author;
+  var authorURL                 = curr.authorURL;
 
-  $('.info .animation-name').text(animName);
-  spansCollection.each(function() {
-    $(this).attr('hidden', 'hidden');
-  });
+  /**
+   * memoize elements for perf
+   */
+  setInfo.$author               = setInfo.$author || $('.author');
+  setInfo.$spansCollectionItems = setInfo.$spansCollectionItems || [];
+  setInfo.$authorLink           = setInfo.$authorLink || $('.author > a');
+  setInfo.$authorName           = setInfo.$authorName || $('.author-name');
+  setInfo.$spansCollection      = setInfo.$spansCollection || $('.hexcode');
+  setInfo.$animName             = setInfo.$animName || $('.info .animation-name');
+
+  setInfo.$animName.text(animName);
+  setInfo.$spansCollection.attr('hidden', 'hidden');
+
   colors.forEach(function(v, i) {
-    var $span = $(spansCollection[i]);
+    var $span;
+
+    /**
+     * colours are limited to hexcode divs which are 20 as of now
+     */
+    i = i % setInfo.$spansCollection.length;
+    $span = setInfo.$spansCollectionItems[i] || (setInfo.$spansCollectionItems[i] = $(setInfo.$spansCollection[i]));
     $span.text(v.toUpperCase());
     $span.removeAttr('hidden');
   });
+
+  if (author) {
+    setInfo.$author.show();
+    setInfo.$authorName.text(author);
+    setInfo.$authorLink.attr('href', authorURL);
+  }
+  else {
+    setInfo.$author.hide();
+  }
 }
 
 window.$ = $;
